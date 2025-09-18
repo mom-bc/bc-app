@@ -1,0 +1,212 @@
+{
+  "BodyCodeMap": {
+    "Energies": {
+      "Trapped Emotions": {
+        "Emotional": {
+          "Common Emotions": {}
+        },
+        "Mental": {
+          "Images": {},
+          "Beliefs": {}
+        },
+        "Inherited": {
+          "Maternal Line": {},
+          "Paternal Line": {}
+        },
+        "Preconception": {}
+      },
+      "Post-Traumatic": {
+        "Psychic Trauma": {},
+        "Memory Field": {},
+        "Emotional Resonance": {}
+      },
+      "Offensive Energies": {
+        "Cording": {},
+        "Saboteur": {},
+        "Broadcast Messages": {},
+        "Will to Die": {},
+        "Addictive Heart Energy": {}
+      },
+      "Mental Energy": {
+        "Memory Field": {},
+        "Idea Allergy": {},
+        "No Will to Live": {}
+      }
+    },
+    "Circuits & Systems": {
+      "Organs": {
+        "Heart": {},
+        "Lungs": {},
+        "Liver": {},
+        "Kidneys": {},
+        "Stomach": {},
+        "Intestines": {},
+        "Pancreas": {},
+        "Spleen": {}
+      },
+      "Glands": {
+        "Adrenals": {},
+        "Thyroid": {},
+        "Pituitary": {},
+        "Pineal": {},
+        "Ovaries/Testes": {}
+      },
+      "Muscles": {
+        "Skeletal Muscles": {},
+        "Smooth Muscles": {}
+      },
+      "Systems": {
+        "Nervous System": {
+          "Central": {},
+          "Peripheral": {},
+          "Autonomic": {
+            "Sympathetic": {},
+            "Parasympathetic": {}
+          }
+        },
+        "Immune System": {},
+        "Digestive System": {},
+        "Cardiovascular System": {},
+        "Respiratory System": {},
+        "Urinary System": {},
+        "Endocrine System": {},
+        "Reproductive System": {}
+      },
+      "Energy Circuits": {
+        "Meridians": {
+          "Lung Meridian": {},
+          "Large Intestine Meridian": {},
+          "Stomach Meridian": {},
+          "Spleen Meridian": {},
+          "Heart Meridian": {},
+          "Small Intestine Meridian": {},
+          "Bladder Meridian": {},
+          "Kidney Meridian": {},
+          "Pericardium Meridian": {},
+          "Triple Warmer Meridian": {},
+          "Gallbladder Meridian": {},
+          "Liver Meridian": {}
+        },
+        "Chakras": {
+          "Root Chakra": {},
+          "Sacral Chakra": {},
+          "Solar Plexus Chakra": {},
+          "Heart Chakra": {},
+          "Throat Chakra": {},
+          "Third Eye Chakra": {},
+          "Crown Chakra": {}
+        }
+      }
+    },
+    "Toxins": {
+      "Chemicals": {
+        "Pesticides": {},
+        "Plastics": {},
+        "Industrial Chemicals": {},
+        "Household Chemicals": {},
+        "Food Additives": {}
+      },
+      "Heavy Metals": {
+        "Mercury": {},
+        "Lead": {},
+        "Aluminum": {},
+        "Cadmium": {},
+        "Arsenic": {}
+      },
+      "Free Radicals": {},
+      "Food Additives": {
+        "Preservatives": {},
+        "Artificial Colors": {},
+        "Artificial Flavors": {},
+        "Sweeteners": {}
+      }
+    },
+    "Pathogens": {
+      "Viruses": {
+        "Common Cold Viruses": {},
+        "Flu Viruses": {},
+        "Other Viral Infections": {}
+      },
+      "Bacteria": {
+        "Strep": {},
+        "Staph": {},
+        "Other Bacterial Infections": {}
+      },
+      "Parasites": {
+        "Worms": {},
+        "Protozoa": {},
+        "Other Parasites": {}
+      },
+      "Mold": {
+        "Black Mold": {},
+        "Other Mold Types": {}
+      },
+      "Fungus": {
+        "Candida": {},
+        "Other Fungal Infections": {}
+      }
+    },
+    "Structural": {
+      "Bones": {
+        "Cranial Bones": {},
+        "Spinal Bones": {},
+        "Other Bones": {}
+      },
+      "Nerves": {
+        "Central Nervous System": {},
+        "Peripheral Nerves": {}
+      },
+      "Connective Tissue": {
+        "Tendons": {},
+        "Ligaments": {},
+        "Fascia": {}
+      },
+      "Misalignments": {
+        "Skull": {
+          "Cranial Faults": {}
+        },
+        "Spinal Column": {
+          "Vertebral Misalignments": {}
+        },
+        "Joints": {
+          "Shoulder": {},
+          "Knee": {},
+          "Hip": {},
+          "Other Joints": {}
+        }
+      }
+    },
+    "Nutrition & Lifestyle": {
+      "Nutrition": {
+        "Deficiencies": {
+          "Vitamins": {},
+          "Minerals": {},
+          "Amino Acids": {},
+          "Fatty Acids": {}
+        },
+        "Malabsorption": {
+          "Enzyme Deficiency": {},
+          "Gut Imbalance": {}
+        }
+      },
+      "Lifestyle": {
+        "Sleep": {
+          "Insomnia": {},
+          "Sleep Deprivation": {}
+        },
+        "Hydration": {
+          "Dehydration": {},
+          "Electrolyte Imbalance": {}
+        },
+        "Exercise": {
+          "Lack of Exercise": {},
+          "Overexertion": {}
+        },
+        "Balance": {
+          "Work-Life Balance": {},
+          "Stress Management": {}
+        }
+      }
+    }
+  }
+}
