@@ -71,6 +71,7 @@
     fetch("bodycode.json")
       .then(res => res.json())
       .then(data => {
+        // Start from inside BodyCodeMap
         tree = data.BodyCodeMap;
         reset();
       });
@@ -95,7 +96,10 @@
       if (options.length === 0) {
         questionDiv.innerText = "✅ Final Item:\n" + path[path.length - 1];
       } else {
-        questionDiv.innerText = "Choose one:";
+        questionDiv.innerText = path.length === 0
+          ? "Select a main category:"
+          : "Select a subcategory:";
+        
         options.forEach(option => {
           const btn = document.createElement("button");
           btn.innerText = option;
