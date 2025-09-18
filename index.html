@@ -1,44 +1,111 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Body Code App</title>
+  <meta charset="UTF-8" />
+  <title>Body Code Navigator</title>
   <style>
-    body { font-family: Arial, sans-serif; padding: 20px; }
-    #question { font-size: 1.5em; margin-bottom: 20px; }
-    button { margin: 5px; padding: 10px 20px; font-size: 1em; }
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 2rem auto;
+      text-align: center;
+    }
+    #question {
+      font-size: 1.5rem;
+      margin: 2rem 0;
+    }
+    button {
+      margin: 0.5rem;
+      padding: 0.8rem 1.2rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    #path {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
   </style>
 </head>
 <body>
-  <h1>Body Code App</h1>
+  <h1>Body Code Navigator</h1>
   <div id="question">Loading...</div>
-  <button onclick="next('yes')">Yes</button>
-  <button onclick="next('no')">No</button>
+  <div id="buttons">
+    <button onclick="goYes()">Yes</button>
+    <button onclick="goNo()">No</button>
+    <button onclick="goBack()">⬅ Back</button>
+  </div>
+  <div id="path"></div>
 
   <script>
-    let data = [];
-    let index = 0;
+    let tree = {};
+    let path = [];
+    let options = [];
+    let currentIndex = 0;
 
-    async function loadData() {
-      const res = await fetch('bodycode_questions.json');
-      data = await res.json();
-      showQuestion();
+    // Load the JSON file
+    fetch("bodycode.json")
+      .then(res => res.json())
+      .then(data => {
+        tree = data.BodyCodeMap;
+        reset();
+      });
+
+    function getNode(p) {
+      let node = tree;
+      for (let key of p) {
+        node = node[key];
+      }
+      return node;
     }
 
-    function showQuestion() {
-      if (index < data.length) {
-        document.getElementById('question').innerText = data[index].question;
-      } else {
-        document.getElementById('question').innerText = "Done!";
+    function render() {
+      const node = getNode(path);
+      options = Object.keys(node);
+      currentIndex = 0;
+
+      if (options.length === 0) {
+        document.getElementById("question").innerText =
+          "✅ You reached a final item: " + path[path.length - 1];
+        return;
+      }
+
+      document.getElementById("question").innerText =
+        "Is it: " + options[currentIndex] + "?";
+
+      document.getElementById("path").innerText =
+        "Current path: " + (path.length ? path.join(" > ") : "Root");
+    }
+
+    function goYes() {
+      if (!options.length) return;
+      path.push(options[currentIndex]);
+      render();
+    }
+
+    function goNo() {
+      currentIndex++;
+      if (currentIndex >= options.length) {
+        document.getElementById("question").innerText =
+          "❌ None of the options in this branch match.";
+        options = [];
+        return;
+      }
+      document.getElementById("question").innerText =
+        "Is it: " + options[currentIndex] + "?";
+    }
+
+    function goBack() {
+      if (path.length > 0) {
+        path.pop();
+        render();
       }
     }
 
-    function next(answer) {
-      index++;
-      showQuestion();
+    function reset() {
+      path = [];
+      render();
     }
-
-    loadData();
   </script>
 </body>
 </html>
