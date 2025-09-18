@@ -2,26 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Body Code Navigator</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       max-width: 600px;
-      margin: 2rem auto;
+      margin: 1rem auto;
+      padding: 1rem;
       text-align: center;
+      background: #f9f9f9;
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
     }
     #question {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       margin: 2rem 0;
+      line-height: 1.5;
+      color: #333;
+    }
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin: 1.5rem 0;
     }
     button {
-      margin: 0.5rem;
-      padding: 0.8rem 1.2rem;
-      font-size: 1rem;
+      flex: 1;
+      padding: 1rem;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 12px;
+      background: #007aff;
+      color: white;
+      font-weight: 600;
       cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    button:hover {
+      background: #005ecb;
+    }
+    button.secondary {
+      background: #e0e0e0;
+      color: #333;
     }
     #path {
-      margin-top: 1rem;
+      margin-top: 1.5rem;
       font-size: 0.9rem;
       color: #666;
     }
@@ -30,82 +58,9 @@
 <body>
   <h1>Body Code Navigator</h1>
   <div id="question">Loading...</div>
-  <div id="buttons">
-    <button onclick="goYes()">Yes</button>
-    <button onclick="goNo()">No</button>
-    <button onclick="goBack()">⬅ Back</button>
+  <div class="buttons">
+    <button onclick="goYes()">✅ Yes</button>
+    <button onclick="goNo()">❌ No</button>
+    <button class="secondary" onclick="goBack()">⬅ Back</button>
   </div>
-  <div id="path"></div>
-
-  <script>
-    let tree = {};
-    let path = [];
-    let options = [];
-    let currentIndex = 0;
-
-    // Load the JSON file
-    fetch("bodycode.json")
-      .then(res => res.json())
-      .then(data => {
-        tree = data.BodyCodeMap;
-        reset();
-      });
-
-    function getNode(p) {
-      let node = tree;
-      for (let key of p) {
-        node = node[key];
-      }
-      return node;
-    }
-
-    function render() {
-      const node = getNode(path);
-      options = Object.keys(node);
-      currentIndex = 0;
-
-      if (options.length === 0) {
-        document.getElementById("question").innerText =
-          "✅ You reached a final item: " + path[path.length - 1];
-        return;
-      }
-
-      document.getElementById("question").innerText =
-        "Is it: " + options[currentIndex] + "?";
-
-      document.getElementById("path").innerText =
-        "Current path: " + (path.length ? path.join(" > ") : "Root");
-    }
-
-    function goYes() {
-      if (!options.length) return;
-      path.push(options[currentIndex]);
-      render();
-    }
-
-    function goNo() {
-      currentIndex++;
-      if (currentIndex >= options.length) {
-        document.getElementById("question").innerText =
-          "❌ None of the options in this branch match.";
-        options = [];
-        return;
-      }
-      document.getElementById("question").innerText =
-        "Is it: " + options[currentIndex] + "?";
-    }
-
-    function goBack() {
-      if (path.length > 0) {
-        path.pop();
-        render();
-      }
-    }
-
-    function reset() {
-      path = [];
-      render();
-    }
-  </script>
-</body>
-</html>
+  <div id=
