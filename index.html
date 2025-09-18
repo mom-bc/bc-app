@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Body Code App</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    #question { font-size: 1.5em; margin-bottom: 20px; }
+    button { margin: 5px; padding: 10px 20px; font-size: 1em; }
+  </style>
+</head>
+<body>
+  <h1>Body Code App</h1>
+  <div id="question">Loading...</div>
+  <button onclick="next('yes')">Yes</button>
+  <button onclick="next('no')">No</button>
+
+  <script>
+    let data = [];
+    let index = 0;
+
+    async function loadData() {
+      const res = await fetch('bodycode_questions.json');
+      data = await res.json();
+      showQuestion();
+    }
+
+    function showQuestion() {
+      if (index < data.length) {
+        document.getElementById('question').innerText = data[index].question;
+      } else {
+        document.getElementById('question').innerText = "Done!";
+      }
+    }
+
+    function next(answer) {
+      index++;
+      showQuestion();
+    }
+
+    loadData();
+  </script>
+</body>
+</html>
